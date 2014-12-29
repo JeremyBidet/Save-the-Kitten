@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <eclipse-userlibraries version="2">
     <library name="Zen4" systemlibrary="false">
-        <archive path="/Project/lib/zen4/zen4.jar" source="C:/Users/User/Documents/Cours/M1/Java/workspace/Project/lib/zen4/src.zip"/>
+        <archive path="/Project/lib/zen4/zen4.jar" source="/Project/lib/zen4/src.zip"/>
     </library>
 </eclipse-userlibraries>
