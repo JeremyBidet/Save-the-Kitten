@@ -16,15 +16,6 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1418372746448</id>
-			<name>lib</name>
-			<type>21</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-*.jar</arguments>
-			</matcher>
-		</filter>
-		<filter>
 			<id>1415808801828</id>
 			<name>resources</name>
 			<type>21</type>

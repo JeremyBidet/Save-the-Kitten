@@ -3,8 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry exported="true" kind="lib" path="lib/jbox2d-2.2.1.1/jbox2d-library-2.2.1.1-javadoc.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jbox2d-2.2.1.1/jbox2d-library-2.2.1.1-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jbox2d-2.2.1.1/jbox2d-library-2.2.1.1.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/JBox2D 2.2.1.1"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Zen4"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>
