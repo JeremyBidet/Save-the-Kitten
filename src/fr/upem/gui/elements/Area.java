@@ -7,9 +7,9 @@ public class Area {
 
 	private final ArrayList<Element> elements = new ArrayList<Element>();
 
-	public void draw(Graphics2D graphics2d) {
+	public void draw(Graphics2D graphics, boolean contentLost) {
 		for(Element e : elements) {
-			e.draw();
+			e.accept(graphics, contentLost);
 		}
 	}
 

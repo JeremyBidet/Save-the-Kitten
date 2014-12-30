@@ -14,11 +14,11 @@ public class Level extends Window {
 			/**
 			 * draw area of area then call area code
 			 */
-			area.draw(graphics);
+			area.draw(graphics, contentLost);
 			/**
 			 * draw area of config then call config code
 			 */
-			config.draw(graphics);
+			config.draw(graphics, contentLost);
 		});
 		this.area = area;
 		this.config = config;
