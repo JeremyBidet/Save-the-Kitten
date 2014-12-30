@@ -4,9 +4,14 @@ import java.util.HashMap;
 
 public class ElementFactory {
 
-	private final HashMap<String, Element> elements = new HashMap<String, Element>();
+	private final HashMap<String, Element> elements;
 	
-	public ElementFactory() {
+	private ElementFactory(HashMap<String, Element> elements) {
+		this.elements = elements;
+	}
+	
+	public static ElementFactory createElements() {
+		HashMap<String, Element> elements = new HashMap<String, Element>();
 		/**
 		 * TODO: set the drawing functions
 		 */
@@ -54,6 +59,8 @@ public class ElementFactory {
 		};
 		elements.put("Bomb", bomb);
 		elements.put("Vortex", vortex);
+		
+		return new ElementFactory(elements);
 	}
 	
 	public Structure getStructure(String name) throws IllegalArgumentException {
