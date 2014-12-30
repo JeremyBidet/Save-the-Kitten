@@ -4,28 +4,28 @@ import java.util.HashMap;
 
 public class ElementFactory {
 
-	private static final HashMap<String, Element> elements = new HashMap<String, Element>();
+	private final HashMap<String, Element> elements = new HashMap<String, Element>();
 	
 	public ElementFactory() {
 		/* * CANON * */
-		Element simple_canon = (a,b) -> {
+		Canon2D simple_canon = (a,b) -> {
 			
 		};
-		Element double_canon = (a,b) -> {
+		Canon2D double_canon = (a,b) -> {
 			
 		};
-		Element blast_canon = (a,b) -> {
+		Canon2D blast_canon = (a,b) -> {
 			
 		};
-		elements.put("Simple canon", simple_canon);
-		elements.put("Double canon", double_canon);
-		elements.put("Blast canon", blast_canon);
+		elements.put("Simple", simple_canon);
+		elements.put("Double", double_canon);
+		elements.put("Blast", blast_canon);
 		
 		/* * ELEMENT * */
-		Element net = (a,b) -> {
+		Structure net = (a,b) -> {
 			
 		};
-		Element wall = (a,b) -> {
+		Structure wall = (a,b) -> {
 			
 		};
 		elements.put("Net", net);
@@ -41,9 +41,9 @@ public class ElementFactory {
 		Cat2D gym = (a,b) -> {
 			
 		};
-		elements.put("Clawed cat", clawed);		
-		elements.put("Normal cat", normal);		
-		elements.put("Gym cat", gym);
+		elements.put("Clawed", clawed);		
+		elements.put("Normal", normal);		
+		elements.put("Gym", gym);
 		
 		/* * BOMB * */
 		Bomb2D bomb = (a,b) -> {
@@ -56,7 +56,40 @@ public class ElementFactory {
 		elements.put("Vortex", vortex);
 	}
 	
-	public static Element getElement(String name) {
-		return elements.get(name);
+	public Structure getStructure(String name) throws IllegalArgumentException {
+		Element e = elements.get(name);
+		if(e instanceof Structure) {
+			return (Structure)e;
+		} else {
+			throw new IllegalArgumentException("This name does not refer to a structure element");
+		}
 	}
+	
+	public Canon2D getCanon(String name) throws IllegalArgumentException {
+		Element e = elements.get(name);
+		if(e instanceof Canon2D) {
+			return (Canon2D)e;
+		} else {
+			throw new IllegalArgumentException("This name does not refer to a canon element");
+		}
+	}
+	
+	public Cat2D getCat(String name) throws IllegalArgumentException {
+		Element e = elements.get(name);
+		if(e instanceof Cat2D) {
+			return (Cat2D)e;
+		} else {
+			throw new IllegalArgumentException("This name does not refer to a cat element");
+		}
+	}
+	
+	public Bomb2D getBomb(String name) throws IllegalArgumentException {
+		Element e = elements.get(name);
+		if(e instanceof Bomb2D) {
+			return (Bomb2D)e;
+		} else {
+			throw new IllegalArgumentException("This name does not refer to a bomb element");
+		}
+	}
+	
 }

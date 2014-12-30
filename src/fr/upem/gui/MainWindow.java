@@ -3,8 +3,6 @@ package fr.upem.gui;
 import fr.umlv.zen4.Application;
 import fr.umlv.zen4.MotionEvent.Action;
 import fr.upem.gui.windows.Game;
-import fr.upem.gui.windows.Help;
-import fr.upem.gui.windows.Menu;
 import fr.upem.gui.windows.Window;
 
 public class MainWindow {
@@ -39,16 +37,13 @@ public class MainWindow {
 	}
 	
 	
-	public void menu(Menu menu) {
-		window = menu;
+	public void menu(Window menu) {
+		this.window = menu;
 	}
 	public void level(int no_level) throws Exception {
 		if(null == (window = Game.loadLevel(no_level))) {
 			throw new Exception("Level " + no_level + " not found !");
 		}
-	}
-	public void help(Help help) {
-		window = help;
 	}
 	
 	

@@ -1,9 +1,9 @@
 package fr.upem.gui.windows;
 
 
-public class Menu extends Window {
+public class Home extends Window {
 
-	public Menu() {
+	public Home() {
 		super((graphics, contentLost) -> {
 			/**
 			 * menu code

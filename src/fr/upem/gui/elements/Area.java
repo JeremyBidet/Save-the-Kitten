@@ -5,12 +5,22 @@ import java.util.ArrayList;
 
 public class Area {
 
-	private final ArrayList<Element> elements = new ArrayList<Element>();
+	private final Canon2D canon;
+	private final ArrayList<Structure> structures = new ArrayList<Structure>();
 
+	public Area(Canon2D canon) {
+		this.canon = canon;
+	}
+	
 	public void draw(Graphics2D graphics, boolean contentLost) {
-		for(Element e : elements) {
-			e.accept(graphics, contentLost);
+		canon.accept(graphics, contentLost);
+		for(Structure s : structures) {
+			s.accept(graphics, contentLost);
 		}
+	}
+	
+	public void add(Structure structure) {
+		structures.add(structure);
 	}
 
 }
