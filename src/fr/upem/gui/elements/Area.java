@@ -13,6 +13,9 @@ public class Area {
 	}
 	
 	public void draw(Graphics2D graphics, boolean contentLost) {
+		/**
+		 * TODO: draw area of game
+		 */
 		canon.accept(graphics, contentLost);
 		for(Structure s : structures) {
 			s.accept(graphics, contentLost);

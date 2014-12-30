@@ -12,11 +12,11 @@ public class Level extends Window {
 	public Level(Area area, Config config) {
 		super((graphics, contentLost) -> {
 			/**
-			 * draw area of area then call area code
+			 * TODO: draw area of area then call area code
 			 */
 			area.draw(graphics, contentLost);
 			/**
-			 * draw area of config then call config code
+			 * TODO: draw area of config then call config code
 			 */
 			config.draw(graphics, contentLost);
 		});

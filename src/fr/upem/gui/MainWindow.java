@@ -17,6 +17,9 @@ public class MainWindow {
 	private Window window;
 	
 	public void run() {
+		/**
+		 * TODO:
+		 */
 		Application.run(settings.BACKGROUND_COLOR, application_context -> {
 			final Screen screen = new Screen(
 					application_context.getScreenInfo().getWidth(),

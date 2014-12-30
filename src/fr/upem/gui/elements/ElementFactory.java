@@ -7,6 +7,9 @@ public class ElementFactory {
 	private final HashMap<String, Element> elements = new HashMap<String, Element>();
 	
 	public ElementFactory() {
+		/**
+		 * TODO: set the drawing functions
+		 */
 		/* * CANON * */
 		Canon2D simple_canon = (a,b) -> {
 			
@@ -20,7 +23,6 @@ public class ElementFactory {
 		elements.put("Simple", simple_canon);
 		elements.put("Double", double_canon);
 		elements.put("Blast", blast_canon);
-		
 		/* * ELEMENT * */
 		Structure net = (a,b) -> {
 			
@@ -30,7 +32,6 @@ public class ElementFactory {
 		};
 		elements.put("Net", net);
 		elements.put("Wall", wall);
-		
 		/* * CAT * */
 		Cat2D clawed = (a,b) -> {
 			
@@ -44,7 +45,6 @@ public class ElementFactory {
 		elements.put("Clawed", clawed);		
 		elements.put("Normal", normal);		
 		elements.put("Gym", gym);
-		
 		/* * BOMB * */
 		Bomb2D bomb = (a,b) -> {
 			

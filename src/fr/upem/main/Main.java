@@ -27,6 +27,9 @@ public class Main {
 		Game.addLevel(2, new Level(new Area(ef.getCanon("Blast")), new Config()));
 		Game.addLevel(3, new Level(new Area(ef.getCanon("Double")), new Config()));
 		
+		/**
+		 * TODO:
+		 */
 		MainWindow mw = new MainWindow();
 		mw.menu(home);
 		mw.run();

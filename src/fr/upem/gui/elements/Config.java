@@ -10,13 +10,13 @@ public class Config {
 
 	public void draw(Graphics2D graphics, boolean contentLost) {
 		/**
-		 * draw cats in bottom left corner cell		
+		 * TODO: draw area of cats in bottom left corner cell		
 		 */
 		for(Cat2D c : cats) {
 			c.accept(graphics, contentLost);
 		}
 		/**
-		 * draw bombs in bottom right corner cell
+		 * TODO: draw area of bombs in bottom right corner cell
 		 */
 		for(Bomb2D b : bombs) {
 			b.accept(graphics, contentLost);
