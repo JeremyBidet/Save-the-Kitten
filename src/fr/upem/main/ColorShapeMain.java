@@ -9,8 +9,6 @@ import fr.umlv.zen4.Application;
 
 public class ColorShapeMain {
   public static void main(String[] args) {
-    int WIDTH = 800;
-    int HEIGHT = 600;
     int SIZE = 30;
     int STRIDE = 100;
 
@@ -24,8 +22,8 @@ public class ColorShapeMain {
         }
         context.renderFrame( (a,b) -> {
           for(int i = 0; i < STRIDE; i++) {
-            float x = random.nextInt(WIDTH);
-            float y = random.nextInt(HEIGHT);
+            float x = random.nextInt((int)context.getScreenInfo().getWidth());
+            float y = random.nextInt((int)context.getScreenInfo().getHeight());
 
             Color color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255), random.nextInt(255));
             RadialGradientPaint paint = new RadialGradientPaint(x, y, SIZE, new float[]{0f, 1f}, new Color[]{color, Color.WHITE});

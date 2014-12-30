@@ -1,5 +1,6 @@
 package fr.upem.gui.windows;
 
+
 import fr.upem.gui.elements.Area;
 import fr.upem.gui.elements.Config;
 
