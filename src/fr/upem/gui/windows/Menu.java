@@ -1,10 +1,14 @@
 package fr.upem.gui.windows;
 
 
-public class Menu implements Window {
+public class Menu extends Window {
 
-	public void draw() {
-		
+	public Menu() {
+		super((graphics, contentLost) -> {
+			/**
+			 * menu code
+			 */
+		});
 	}
-
+	
 }

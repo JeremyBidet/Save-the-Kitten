@@ -1,5 +1,6 @@
 package fr.upem.gui.elements;
 
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 public class Config {
@@ -7,7 +8,7 @@ public class Config {
 	private final ArrayList<Cat2D> cats = new ArrayList<Cat2D>();
 	private final ArrayList<Bomb2D> bombs = new ArrayList<Bomb2D>();
 
-	public void draw() {
+	public void draw(Graphics2D graphics2d) {
 		/**
 		 * draw cats in bottom left corner cell		
 		 */

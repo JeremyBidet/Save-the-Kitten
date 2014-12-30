@@ -14,11 +14,6 @@ public class MainWindow {
 	 */
 	private MainWindowSetting settings = new MainWindowSetting();
 	/**
-	 * Theses fields never change
-	 */
-	private final Menu menu = new Menu();
-	private final Help help = new Help();
-	/**
 	 * Not final cause window change from menu to help to level and vice-versa
 	 */
 	private Window window;
@@ -38,15 +33,13 @@ public class MainWindow {
 				if(Action.UP == application_context.pollMotionTracker().getAction()) {
 					application_context.exit(0);
 				}
-				application_context.renderFrame((graphics, contentLost) -> {
-					graphics.drawRect(screen.getWidth()/2-100, screen.getHeight()/2-50, 200, 100);
-				});
+				application_context.renderFrame(window.getGraphicsConsumer());
 			}
 		});
 	}
 	
 	
-	public void menu() {
+	public void menu(Menu menu) {
 		window = menu;
 	}
 	public void level(int no_level) throws Exception {
@@ -54,13 +47,8 @@ public class MainWindow {
 			throw new Exception("Level " + no_level + " not found !");
 		}
 	}
-	public void help() {
+	public void help(Help help) {
 		window = help;
-	}
-	
-	
-	public void draw() {
-		window.draw();
 	}
 	
 	

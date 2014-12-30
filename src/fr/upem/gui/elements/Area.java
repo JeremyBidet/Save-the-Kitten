@@ -1,12 +1,13 @@
 package fr.upem.gui.elements;
 
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 public class Area {
 
 	private final ArrayList<Element> elements = new ArrayList<Element>();
-	
-	public void draw() {
+
+	public void draw(Graphics2D graphics2d) {
 		for(Element e : elements) {
 			e.draw();
 		}

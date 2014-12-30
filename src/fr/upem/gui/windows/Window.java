@@ -1,7 +1,16 @@
 package fr.upem.gui.windows;
 
-public interface Window {
+import fr.umlv.zen4.GraphicsConsumer;
 
-	void draw();
+public abstract class Window {
 
+	private GraphicsConsumer gc;
+	
+	protected Window(GraphicsConsumer gc) {
+		this.gc = gc;
+	}
+	
+	public GraphicsConsumer getGraphicsConsumer() {
+		return gc;
+	}
 }

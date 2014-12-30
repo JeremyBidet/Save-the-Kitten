@@ -1,10 +1,14 @@
 package fr.upem.gui.windows;
 
 
-public class Help implements Window {
+public class Help extends Window {
 
-	public void draw() {
-		
+	public Help() {
+		super((graphics, contentLost) -> {
+			/**
+			 * help code
+			 */
+		});
 	}
 
 }
