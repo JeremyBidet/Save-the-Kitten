@@ -1,16 +1,21 @@
 package fr.upem.gui.windows;
 
-import fr.umlv.zen4.GraphicsConsumer;
+import fr.umlv.zen4.ApplicationContext;
+import fr.upem.gui.WindowSetting;
 
-public abstract class Window {
 
-	private GraphicsConsumer gc;
+public class Window {
 	
-	protected Window(GraphicsConsumer gc) {
-		this.gc = gc;
+	private final ApplicationContext context;
+	private final WindowSetting settings;
+	
+	public Window(ApplicationContext context, WindowSetting settings) {
+		this.context = context;
+		this.settings = settings;
 	}
 	
-	public GraphicsConsumer getGraphicsConsumer() {
-		return gc;
+	public WindowConsumer apply(WindowConsumer consumer) {
+		return consumer.accept(context, settings);
 	}
+	
 }

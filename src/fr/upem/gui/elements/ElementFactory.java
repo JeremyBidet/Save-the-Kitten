@@ -16,47 +16,27 @@ public class ElementFactory {
 		 * TODO: set the drawing functions
 		 */
 		/* * CANON * */
-		Canon2D simple_canon = (a,b) -> {
-			
-		};
-		Canon2D double_canon = (a,b) -> {
-			
-		};
-		Canon2D blast_canon = (a,b) -> {
-			
-		};
+		Canon2D simple_canon = null;
+		Canon2D double_canon = null;
+		Canon2D blast_canon = null;
 		elements.put("Simple", simple_canon);
 		elements.put("Double", double_canon);
 		elements.put("Blast", blast_canon);
 		/* * ELEMENT * */
-		Structure net = (a,b) -> {
-			
-		};
-		Structure wall = (a,b) -> {
-			
-		};
+		Structure net = null;
+		Structure wall = null;
 		elements.put("Net", net);
 		elements.put("Wall", wall);
 		/* * CAT * */
-		Cat2D clawed = (a,b) -> {
-			
-		};
-		Cat2D normal = (a,b) -> {
-			
-		};
-		Cat2D gym = (a,b) -> {
-			
-		};
+		Cat2D clawed = null;
+		Cat2D normal = null;
+		Cat2D gym = null;
 		elements.put("Clawed", clawed);		
 		elements.put("Normal", normal);		
 		elements.put("Gym", gym);
 		/* * BOMB * */
-		Bomb2D bomb = (a,b) -> {
-			
-		};
-		Bomb2D vortex = (a,b) -> {
-			
-		};
+		Bomb2D bomb = null;
+		Bomb2D vortex = null;
 		elements.put("Bomb", bomb);
 		elements.put("Vortex", vortex);
 		

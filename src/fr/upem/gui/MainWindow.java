@@ -1,15 +1,10 @@
 package fr.upem.gui;
 
 import fr.umlv.zen4.Application;
-import fr.umlv.zen4.MotionEvent.Action;
-import fr.upem.gui.elements.Area;
-import fr.upem.gui.elements.Config;
-import fr.upem.gui.elements.ElementFactory;
-import fr.upem.gui.windows.Game;
-import fr.upem.gui.windows.Help;
-import fr.upem.gui.windows.Home;
-import fr.upem.gui.windows.Level;
 import fr.upem.gui.windows.Window;
+import fr.upem.gui.windows.WindowConsumer;
+import fr.upem.gui.windows.WindowFactory;
+
 
 /**
  * Set the main GUI for the game.<br>
@@ -26,43 +21,27 @@ public class MainWindow {
 	}
 	
 	public void run() {
-		final Window home = new Home();
-		final Window help = new Help();
-		final ElementFactory elements = ElementFactory.createElements();
-		new Game();
-		Game.addLevel(1, new Level(new Area(elements.getCanon("Simple")), new Config()));
-		Game.addLevel(2, new Level(new Area(elements.getCanon("Blast")), new Config()));
-		Game.addLevel(3, new Level(new Area(elements.getCanon("Double")), new Config()));
-		
-		Application.run(settings.background_color, application_context -> {
-			final Screen screen = new Screen(
-					application_context.getScreenInfo().getWidth(),
-					application_context.getScreenInfo().getHeight());
+		Application.run(settings.background_color, context -> {
+			
 			/* ********************** DBG! log settings ********************* */
-//			System.out.println("___Settings___\n" + settings.toString());
-//			System.out.println("___Screen Info___\n"
-//					+ "Width : " + screen.getWidth() + "\n"
-//					+ "Height : " + screen.getHeight() + "\n");
+			final Screen screen = new Screen(
+					context.getScreenInfo().getWidth(),
+					context.getScreenInfo().getHeight());
+			System.out.println("___Settings___\n" + settings.toString());
+			System.out.println("___Screen Info___\n"
+					+ "Width : " + screen.getWidth() + "\n"
+					+ "Height : " + screen.getHeight() + "\n");
 			/* ************************************************************** */
-			Window window = home;
+			
+			final WindowFactory consumers = WindowFactory.createWindows();
+			Window window = new Window(context, settings);
+			WindowConsumer consumer = consumers.getWindow("Home");
 			for(;;) {
-				if(Action.UP == application_context.pollMotionTracker().getAction()) {
-					application_context.exit(0);
-				}
-				application_context.renderFrame(window.getGraphicsConsumer());
+				consumer = window.apply(consumer);
 			}
+			
 		});
 	}
-	
-	/*
-	public void menu(Window menu) {
-		this.window = menu;
-	}
-	public void level(int no_level) throws Exception {
-		if(null == (window = Game.loadLevel(no_level))) {
-			throw new Exception("Level " + no_level + " not found !");
-		}
-	}*/
 	
 	public String settings() {
 		return settings.toString();

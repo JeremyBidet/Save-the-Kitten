@@ -1,7 +1,8 @@
 package fr.upem.gui.elements;
 
-import fr.umlv.zen4.GraphicsConsumer;
+import java.awt.Image;
 
-public interface Element extends GraphicsConsumer {
+
+public abstract class Element extends Image {
 	
 }
