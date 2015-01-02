@@ -8,7 +8,7 @@ import fr.upem.gui.windows.WindowFactory;
 
 /**
  * Set the main GUI for the game.<br>
- * {@link MainWindowSettings} define settings.<br>
+ * Main window can be set up by initializing a {@link WindowSetting}.
  * @author Jeremy
  * @author Melody
  */
@@ -20,6 +20,9 @@ public class MainWindow {
 		this.settings = settings;
 	}
 	
+	/**
+	 * Starts the application and display the main menu of the game.
+	 */
 	public void run() {
 		Application.run(settings.background_color, context -> {
 			
@@ -43,7 +46,8 @@ public class MainWindow {
 		});
 	}
 	
-	public String settings() {
+	@Override
+	public String toString() {
 		return settings.toString();
 	}
 	

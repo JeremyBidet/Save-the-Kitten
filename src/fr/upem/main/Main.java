@@ -5,7 +5,8 @@ import fr.upem.gui.WindowSetting;
 
 /**
  * Starting point for the application.<br>
- * Init a {@link MainWindow} and call method run.
+ * Init the main window and call method run.
+ * @see MainWindow
  * @author Jeremy
  * @author Melody
  */
